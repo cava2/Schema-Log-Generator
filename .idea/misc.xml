@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.12 (JSON Schema Data Generator)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (JSON Schema Data Generator)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (Schema Log Generator)" project-jdk-type="Python SDK" />
 </project>
