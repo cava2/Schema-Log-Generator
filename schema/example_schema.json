@@ -1,0 +1,8 @@
+{
+  "name": "random_name",
+  "ip": "random_ip",
+  "age": "int:18-90",
+  "dob": "random_date",
+  "active": "random_bool",
+  "login_time": "random_timestamp"
+}

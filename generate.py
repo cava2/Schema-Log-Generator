@@ -2,6 +2,8 @@ import argparse
 import json
 import sys
 from utils.schema_loader import load_schema
+from generators.base import generate_value
+
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -36,35 +38,50 @@ def parse_args():
     return parser.parse_args()
 
 
+def generate_data(schema_dict: dict, count: int) -> list[dict]:
+    records = []
+    for _ in range(count):
+        record = {}
+        for field, spec in schema_dict.items():
+            try:
+                record[field] = generate_value(spec)
+            except ValueError as e:
+                print(f"Error generating field '{field}': {e}", file=sys.stderr)
+                sys.exit(1)
+        records.append(record)
+    return records
+
+
 def main():
     args = parse_args()
 
-    # Load schema from file or inline JSON
+    # Load the JSON schema (file or inline)
     try:
-        schema = load_schema(schema_file=args.schema_file, schema_str=args.schema_str)
+        schema_dict = load_schema(
+            schema_file=args.schema_file,
+            schema_str=args.schema_str
+        )
     except Exception as e:
-        print(f" Schema loading error: {e}", file=sys.stderr)
+        print(f"Schema loading error: {e}", file=sys.stderr)
         sys.exit(1)
 
-    # Echo schema back to the user
-    src = args.schema_file if args.schema_file else "<inline schema>"
-    print(f"Schema loaded  :{src}.")
-    print(f"Generating {args.count} logs.")
+    src = args.schema_file or "<inline schema>"
+    print(f"Schema loaded      : {src}")
+    print(f"Generating {args.count} record(s)")
 
-    # TODO: implement generate_data(schema: dict, count: int) -> list[dict]
-    # data = generate_data(schema, args.count)
+    # Generate the data
+    data = generate_data(schema_dict, args.count)
 
-    # For now, stub out empty data list
-    data = []
-
-    # Output handling: file or stdout
+    # Serialize to JSON
     output_json = json.dumps(data, indent=2)
+
+    # Write to file or stdout
     if args.output:
         try:
             with open(args.output, "w", encoding="utf-8") as f:
                 f.write(output_json)
         except Exception as e:
-            print(f" Failed to write output to file: {e}", file=sys.stderr)
+            print(f"Failed to write output to file: {e}", file=sys.stderr)
             sys.exit(1)
         print(f"Successfully wrote {len(data)} records to {args.output}")
     else:

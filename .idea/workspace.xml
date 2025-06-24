@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5763b413-d1f0-4f59-ad7f-cd53339e6867" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Schema Log Generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Schema Log Generator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/generators/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/dates.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/names.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/numbers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/example_schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/schema/example_schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/cli.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/schema_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/schema_loader.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
